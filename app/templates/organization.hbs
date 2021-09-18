@@ -1,0 +1,12 @@
+{{#if this.errorMessage}}
+  <p> {{this.errorMessage}} </p>
+{{else}}
+  {{#each this.model as |repo|}}
+    <div style="display:flex;padding:10px:">
+       <h3 style="margin:10px;">{{repo.name}}</h3>
+       <p style="margin:10px;">{{repo.branchCount}}</p>
+       <p style="margin:10px;">{{repo.language}}</p>
+       <p style="margin:10px;">{{if repo.private "private" "public"}}</p>
+    </div>
+  {{/each}}
+{{/if}}
